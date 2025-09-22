@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login </title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- LOGIN -->
+    <div class="formulario" id="login">
+        <h1>Inicio de sesión</h1>
+        <form>
+            <div class="username">
+                <input type="text" required>
+                <label>Nombre de usuario</label>
+            </div>
+            <div class="username">
+                <input type="password" required>
+                <label>Contraseña</label>
+            </div>
+            <div class="recordar" onclick="showForm('recuperar')">¿Olvidó su contraseña?</div>
+            <input type="submit" value="Iniciar">
+            <div class="registrarse">
+                Quiero hacer el <a href="#" onclick="showForm('registro')">registro</a>
+            </div>
+            <div class="registrarse">
+                <a href="#" onclick="showForm('cambiar')">Cambiar contraseña</a>
+            </div>
+            <div class="social-login">
+                <p>O inicia con:</p>
+                <a href="https://www.google.com/" target="_blank"><i class="fab fa-google"></i></a>
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.youtube.com/watch?v=XPrs9nqiYOc" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </form>
+    </div>
+
+    <!-- REGISTRO -->
+    <div class="formulario hidden" id="registro">
+        <h1>Registro</h1>
+        <form>
+            <div class="username">
+                <input type="text" required>
+                <label>Nuevo usuario</label>
+            </div>
+            <div class="username">
+                <input type="email" required>
+                <label>Email</label>
+            </div>
+            <div class="username">
+                <input type="password" required>
+                <label>Contraseña</label>
+            </div>
+            <input type="submit" value="Registrar">
+            <div class="registrarse">
+                <a href="#" onclick="showForm('login')">Volver al login</a>
+            </div>
+        </form>
+    </div>
+
+    <!-- CAMBIAR CONTRASEÑA -->
+    <div class="formulario hidden" id="cambiar">
+        <h1>Cambiar Contraseña</h1>
+        <form>
+            <div class="username">
+                <input type="text" required>
+                <label>Usuario</label>
+            </div>
+            <div class="username">
+                <input type="password" required>
+                <label>Contraseña actual</label>
+            </div>
+            <div class="username">
+                <input type="password" required>
+                <label>Nueva contraseña</label>
+            </div>
+            <input type="submit" value="Actualizar">
+            <div class="registrarse">
+                <a href="#" onclick="showForm('login')">Volver al login</a>
+            </div>
+        </form>
+    </div>
+
+    <!-- RECUPERAR CONTRASEÑA -->
+    <div class="formulario hidden" id="recuperar">
+        <h1>Recuperar Contraseña</h1>
+        <form>
+            <div class="username">
+                <input type="email" required>
+                <label>Email registrado</label>
+            </div>
+            <input type="submit" value="Recuperar">
+            <div class="registrarse">
+                <a href="#" onclick="showForm('login')">Volver al login</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Script para alternar entre formularios
+        function showForm(formId) {
+            document.querySelectorAll('.formulario').forEach(f => f.classList.add('hidden'));
+            document.getElementById(formId).classList.remove('hidden');
+        }
+    </script>
+
+</body>
+</html>
